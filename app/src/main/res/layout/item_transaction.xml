@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/rounded_corners">
+
+
+    <TextView
+        android:id="@+id/headingOfTransaction"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/primaryColor2"
+        android:text="Paid for hotel"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/dateOfTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headingOfTransaction"
+        android:layout_alignStart="@+id/headingOfTransaction"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:text="27/02/2024"
+        android:textColor="@color/grey"
+        android:textSize="12dp"/>
+
+    <TextView
+        android:id="@+id/amountOfTransaction"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/buttonDeleteTransaction"
+        android:gravity="end"
+        android:text="+50 000tg"
+        android:textColor="#13B61A"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/buttonDeleteTransaction"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/icon_delete" />
+
+</RelativeLayout>
+

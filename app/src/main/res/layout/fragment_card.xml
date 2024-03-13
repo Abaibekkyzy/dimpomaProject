@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CardFragment"
+    android:background="@color/primaryColor">
+
+    <RelativeLayout
+        android:id="@+id/balanceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="16dp"
+        android:topLeftRadius="20dp">
+
+        <TextView
+            android:id="@+id/textViewBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="75dp"
+            android:text="350 120tg"
+            android:textColor="@color/white"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewBottomBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewBalance"
+            android:layout_alignStart="@+id/textViewBalance"
+            android:text="Your balance"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/transactionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balanceLayout"
+        android:padding="8dp"
+        android:background="@drawable/rounded_specific_corners">
+
+        <TextView
+            android:id="@+id/textViewTransactions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transactions"
+            android:textColor="@color/primaryColor2"
+            android:textSize="28dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonAddTransaction"
+            tools:listitem="@layout/item_transaction"/>
+
+        <Button
+            android:id="@+id/buttonAddTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textViewTransactions"
+            android:layout_alignEnd="@+id/recyclerViewTransactions"
+            android:layout_marginTop="-6dp"
+            android:layout_marginEnd="1dp"
+            android:backgroundTint="@color/primaryColor2"
+            android:text="+ Add"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+

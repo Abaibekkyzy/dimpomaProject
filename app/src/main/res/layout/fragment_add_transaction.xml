@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_add_transaction"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTransactionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/buttonBackOnAddPage"
+            android:layout_width="30dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/icon_back_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewAddTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Transaction"
+            android:textColor="@color/primaryColor2"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toEndOf="@+id/buttonBackOnAddPage"
+            app:layout_constraintTop_toTopOf="@+id/buttonBackOnAddPage" />
+
+        <TextView
+            android:id="@+id/textViewAddTransactionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Call your transaction"
+            android:textColor="@color/primaryColor2"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/buttonBackOnAddPage"
+            app:layout_constraintTop_toBottomOf="@+id/buttonBackOnAddPage" />
+
+        <EditText
+            android:id="@+id/editTextAddTransactionName"
+            style="@style/RoundedEditText"
+            android:layout_width="350dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
+            android:width="350dp"
+            android:hint="Translation name"
+            android:padding="8dp"
+            android:textColorHint="@color/primaryColor"
+            android:textSize="14dp"
+            android:maxLength="100"
+            app:layout_constraintStart_toStartOf="@+id/textViewAddTransactionName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAddTransactionName" />
+
+
+        <TextView
+            android:id="@+id/textViewAmountTranslation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enter amount of translation"
+            android:textColor="@color/primaryColor2"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/editTextAddTransactionName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAddTransactionName" />
+
+        <EditText
+            android:id="@+id/editViewAmountTranslation"
+            style="@style/RoundedEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:width="350dp"
+            android:hint="Enter amount"
+            android:padding="8dp"
+            android:textColorHint="@color/primaryColor"
+            android:textSize="14dp"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="@+id/textViewAmountTranslation"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAmountTranslation" />
+
+
+        <TextView
+            android:id="@+id/textViewTypeForTranslation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Select type"
+            android:textSize="16dp"
+            android:textColor="@color/primaryColor2"
+            app:layout_constraintStart_toStartOf="@+id/editViewAmountTranslation"
+            app:layout_constraintTop_toBottomOf="@+id/editViewAmountTranslation" />
+
+        <Spinner
+            android:id="@+id/spinnerTransactionType"
+            style="@style/CustomSpinner"
+            android:layout_width="350dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/textViewTypeForTranslation"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTypeForTranslation"
+            android:spinnerMode="dropdown"/>
+
+        <TextView
+            android:id="@+id/textViewCategoryForTranslation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Select category"
+            android:textSize="16dp"
+            android:textColor="@color/primaryColor2"
+            app:layout_constraintStart_toStartOf="@+id/spinnerTransactionType"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerTransactionType" />
+
+        <Spinner
+            android:id="@+id/spinnerTransactionCategory"
+            style="@style/CustomSpinner"
+            android:layout_width="350dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/textViewCategoryForTranslation"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCategoryForTranslation"
+            android:spinnerMode="dropdown"/>
+
+
+        <TextView
+            android:id="@+id/textViewDateForTranslation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Date:"
+            android:textSize="16dp"
+            android:textColor="@color/primaryColor2"
+            app:layout_constraintStart_toStartOf="@+id/spinnerTransactionCategory"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerTransactionCategory" />
+
+        <DatePicker
+            android:id="@+id/datePickerForTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:calendarTextColor="@color/primaryColor2"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDateForTranslation" />
+
+
+        <Button
+            android:id="@+id/buttonADD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePickerForTransaction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
+

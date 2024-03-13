@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/rounded_top_corners.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Round the top-left and top-right corners -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:radius="50dp" />
+            <solid android:color="#F0F0FD" />
+        </shape>
+    </item>
+
+</layer-list>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapp.HomeFragment"
+        android:label="HomeFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.example.myapp.CardFragment"
+        android:label="CardFragment">
+        <action
+            android:id="@+id/action_cardFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.example.myapp.AddTransactionFragment"
+        android:label="AddTransactionFragment">
+        <action
+            android:id="@+id/action_addTransactionFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.myapp.NotificationsFragment"
+        android:label="NotificationsFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_reportForYearFragment"
+            app:destination="@id/reportForYearFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_createNewCategoryFragment"
+            app:destination="@id/createNewCategoryFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportForYearFragment"
+        android:name="com.example.myapp.profile.reportForYear.ReportForYearFragment"
+        android:label="fragment_report_for_year"
+        tools:layout="@layout/fragment_report_for_year" >
+        <action
+            android:id="@+id/action_reportForYearFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewCategoryFragment"
+        android:name="com.example.myapp.profile.createNewCategory.CreateNewCategoryFragment"
+        android:label="fragment_create_new_category"
+        tools:layout="@layout/fragment_create_new_category" >
+        <action
+            android:id="@+id/action_createNewCategoryFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.myapp.profile.editProfile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+
+</navigation>
