@@ -34,30 +34,18 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // getting the employeelist
         val employelist= CategoryWithMoney.getCategoryWithMoney()
 
-        // Assign employeelist to ItemAdapter
         val itemAdapter= AdapterForCategory(employelist)
 
-        // Set the LayoutManager that
-        // this RecyclerView will use.
         val recyclerView: RecyclerView =view.findViewById(R.id.rcViewExpences)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // adapter instance is set to the
-        // recyclerview to inflate the items.
         recyclerView.adapter = itemAdapter
 
         var btn: ViewGroup = view.findViewById(R.id.reportForYear)
         val navController = findNavController()
         btn.setOnClickListener{
-            // Переключение на другой фрагмент
-//            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//            val newFragment = ReportForYearFragment() // замените NewFragment на ваш фрагмент
-//            fragmentTransaction.replace(R.id.nav_host_fragment, newFragment)
-//            fragmentTransaction.addToBackStack(null)
-//            fragmentTransaction.commit()
 
             navController.navigate(R.id.action_profileFragment_to_reportForYearFragment)
         }
@@ -65,25 +53,12 @@ class ProfileFragment : Fragment() {
         var editBtn: ViewGroup = view.findViewById(R.id.editBtn)
 
         editBtn.setOnClickListener{
-            // Переключение на другой фрагмент
-//            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//            val newFragment = EditProfileFragment() // замените NewFragment на ваш фрагмент
-//            fragmentTransaction.replace(R.id.nav_host_fragment, newFragment)
-//            fragmentTransaction.addToBackStack(null)
-//            fragmentTransaction.commit()
-//            val navController = findNavController()
             navController.navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
 
         var createCategoryBtn: ViewGroup = view.findViewById(R.id.createCategoryBtn2)
 
         createCategoryBtn.setOnClickListener{
-            // Переключение на другой фрагмент
-//            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//            val newFragment = CreateNewCategoryFragment() // замените NewFragment на ваш фрагмент
-//            fragmentTransaction.replace(R.id.nav_host_fragment, newFragment)
-//            fragmentTransaction.addToBackStack(null)
-//            fragmentTransaction.commit()
             navController.navigate(R.id.action_profileFragment_to_createNewCategoryFragment)
         }
 

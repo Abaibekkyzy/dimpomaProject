@@ -29,38 +29,23 @@ class ReportForYearFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_report_for_year, container, false)
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // getting the employeelist
         val employelist= CategoryWithMoney.getCategoryWithMoney()
 
-        // Assign employeelist to ItemAdapter
         val itemAdapter= AdapterForCategory(employelist)
 
-        // Set the LayoutManager that
-        // this RecyclerView will use.
         val recyclerView: RecyclerView =view.findViewById(R.id.rcViewExpences)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // adapter instance is set to the
-        // recyclerview to inflate the items.
         recyclerView.adapter = itemAdapter
         val navController = findNavController()
 
         var btn: ViewGroup = view.findViewById(R.id.backToProfile)
 
         btn.setOnClickListener{
-            // Переключение на другой фрагмент
-//            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//            val newFragment = ProfileFragment() // замените NewFragment на ваш фрагмент
-//            fragmentTransaction.replace(R.id.nav_host_fragment, newFragment)
-//            fragmentTransaction.addToBackStack(null)
-//            fragmentTransaction.commit()
             navController.navigate(R.id.action_reportForYearFragment_to_profileFragment)
-
         }
 
         var user_expense: TextView = view.findViewById(R.id.user_expense)

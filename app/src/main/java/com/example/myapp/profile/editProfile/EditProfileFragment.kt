@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.myapp.ProfileFragment
 import com.example.myapp.R
 import com.example.myapp.databinding.FragmentEditProfileBinding
 import com.example.myapp.profile.User
@@ -28,7 +27,7 @@ class EditProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentEditProfileBinding.inflate(inflater, container, false)
 
         return binding.root
@@ -37,13 +36,11 @@ class EditProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var name: EditText = binding.editName
-        var surname: EditText = binding.editSurname
-        var email: EditText = binding.editEmail
+        val name: EditText = binding.editName
+        val surname: EditText = binding.editSurname
+        val email: EditText = binding.editEmail
 
-        var name2: String
-        var surname2: String
-        var email2: String
+
 
         var user: User = UserList.getUserList().get(this.idUser)
 
@@ -74,21 +71,6 @@ class EditProfileFragment : Fragment() {
         var BackBtn: CardView = binding.backButtonFromEdit
 
         BackBtn.setOnClickListener{
-            // Создаем транзакцию фрагментов
-//            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//
-//            // Добавляем новый фрагмент поверх текущего
-//            val newFragment = ProfileFragment() // Замените ProfileFragment() на ваш фрагмент
-//            fragmentTransaction.add(R.id.nav_host_fragment, newFragment)
-//
-//            // Удаляем текущий фрагмент
-//            fragmentTransaction.remove(this)
-//
-//            // Добавляем транзакцию в стек возврата
-//            fragmentTransaction.addToBackStack(null)
-//
-//            // Применяем транзакцию
-//            fragmentTransaction.commit()
 
             navController.navigate(R.id.action_editProfileFragment_to_profileFragment)
 
